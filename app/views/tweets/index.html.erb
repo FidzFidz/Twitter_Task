@@ -1,0 +1,25 @@
+
+
+<h1>Welcome to the <span style="color: blue;">Twitter</span> Page</h1>
+<p>
+<%= button_to 'Create New Tweet', new_tweet_path, method: :get %>
+</p>
+
+<table>
+  <thead>
+    <tr>
+    <span style="color: blue;"><h3>Tweets</h3></span>
+    </tr>
+  </thead>    
+
+  <tbody>
+  
+    <% @tweets.each do |tweet| %>
+    <tr>
+     <td><li><%= tweet.name %></li></td>
+    </tr>  
+    
+    <% end %>
+  </tbody>
+</table>
+

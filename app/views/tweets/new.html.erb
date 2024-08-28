@@ -1,0 +1,22 @@
+
+<h1>New <span style="color: blue;">Twitter</span> Page</h1>
+
+
+<%= form_with model: @tweet do |f| %>
+  <p>
+    <h3><%= f.label :name %></h3>
+    <%= f.text_field :name %>
+  </p>
+  <p>
+  <% if @tweet.errors.any? %>
+    <h2>The following errors prevented the tweet from being saved:</h2>
+    <ul>
+        <% @tweet.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+        <% end %>
+    </ul>
+    <% end %>
+
+    <%= f.submit "Create Tweet" %>
+  </p>
+<% end %>
